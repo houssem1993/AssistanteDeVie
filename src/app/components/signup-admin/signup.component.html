@@ -1,0 +1,85 @@
+<app-hero title="Signup admin "></app-hero>
+<div class="row mt-5 justify-content-center" data-aos="fade-up">
+    <div class="col-lg-10">
+      <form [formGroup]="SignupFormAdmin" >
+        
+        <div class="col-md-6 form-group">
+            <input type="text" formControlName="FirstName" class="form-control"  placeholder="Your First Name" >
+          </div>
+          <div *ngIf="SignupFormAdmin.controls['FirstName'].invalid && (
+            SignupFormAdmin.controls['FirstName'].touched ||
+            SignupFormAdmin.controls['FirstName'].dirty
+          )">
+            <div *ngIf="SignupFormAdmin.controls['FirstName'].errors.required" style="color: red;">
+              First Name is required
+            </div>
+            <div *ngIf="SignupFormAdmin.controls['FirstName'].errors.minlength" style="color: red;">
+              first Name must have at least 5 chars
+            </div>
+          </div>
+          <div class="col-md-6 mt-3 form-group">
+            <input type="text" formControlName="lastName" class="form-control"  placeholder="Your Last Name" >
+          </div>
+          <div *ngIf="SignupFormAdmin.controls['lastName'].invalid && (
+            SignupFormAdmin.controls['lastName'].touched ||
+            SignupFormAdmin.controls['lastName'].dirty
+          )">
+            <div *ngIf="SignupFormAdmin.controls['lastName'].errors.required" style="color: red;">
+              Last Name is required
+            </div>
+            <div *ngIf="SignupFormAdmin.controls['lastName'].errors.minlength" style="color: red;">
+              Last Name must have at least 5 chars
+            </div>
+          </div>
+          <div class="col-md-6 mt-3 form-group">
+            <input type="tel" formControlName="tel" class="form-control"  placeholder="Your Tel" >
+          </div>
+          <div *ngIf="SignupFormAdmin.controls['tel'].invalid && (
+            SignupFormAdmin.controls['tel'].touched ||
+            SignupFormAdmin.controls['tel'].dirty
+          )">
+            <div *ngIf="SignupFormAdmin.controls['tel'].errors.required" style="color: red;">
+               Tel is required
+            </div>
+            <div *ngIf="SignupFormAdmin.controls['tel'].errors.pattern" style="color: red;">
+              Format  Tel Invalid 
+            </div>
+          </div>
+          <div class="col-md-6 mt-3 form-group">
+            <input type="email" formControlName="email" class="form-control"  placeholder="Your Email" >
+          </div>
+          <div *ngIf="SignupFormAdmin.controls['email'].invalid && (
+            SignupFormAdmin.controls['email'].touched ||
+            SignupFormAdmin.controls['email'].dirty
+          )">
+            <div *ngIf="SignupFormAdmin.controls['email'].errors.required" style="color: red;">
+               Email is required
+            </div>
+            <div *ngIf="SignupFormAdmin.controls['email'].errors.email" style="color: red;">
+              Format  Email Invalid 
+            </div>
+          </div>
+          <div class="col-md-6 mt-3 form-group">
+            <input type="password" formControlName="pwd" class="form-control"  placeholder="Your Password" >
+          </div>
+          <div *ngIf="SignupFormAdmin.controls['pwd'].invalid && (
+            SignupFormAdmin.controls['pwd'].touched ||
+            SignupFormAdmin.controls['pwd'].dirty
+          )">
+            <div *ngIf="SignupFormAdmin.controls['pwd'].errors.required" style="color: red;">
+              PWD is required
+            </div>
+            <div *ngIf="SignupFormAdmin.controls['pwd'].errors.pattern" style="color: red;">
+              Format  PWD Invalid 
+            </div>
+          </div>
+          
+          
+       
+       
+        <div class="mt-3 "><button type="submit" [disabled]="SignupFormAdmin.invalid" (click)="SignupAdmin()">SignIn Admin</button></div>
+      </form>
+    </div>
+
+  </div>
+

@@ -1,0 +1,141 @@
+<app-hero title="Signup User"></app-hero>
+<div class="row mt-5 justify-content-center" data-aos="fade-up">
+    <div class="col-lg-10">
+      <form [formGroup]="SignupFormUser">
+        
+        <div class="col-md-6 form-group">
+            <input type="text" formControlName="FirstName" class="form-control" id="FirstName" placeholder="Your First Name" required>
+          </div>
+          <div *ngIf="SignupFormUser.controls['FirstName'].invalid && (
+            SignupFormUser.controls['FirstName'].touched ||
+            SignupFormUser.controls['FirstName'].dirty
+          )">
+            <div *ngIf="SignupFormUser.controls['FirstName'].errors.required" style="color: red;">
+              First Name is required
+            </div>
+            <div *ngIf="SignupFormUser.controls['FirstName'].errors.minlength" style="color: red;">
+              first Name must have at least 5 chars
+            </div>
+          </div>
+          <div class="col-md-6 mt-3 form-group">
+            <input type="text" formControlName="lastName" class="form-control" id="lastName" placeholder="Your Last Name" required>
+          </div>
+          <div *ngIf="SignupFormUser.controls['lastName'].invalid && (
+            SignupFormUser.controls['lastName'].touched ||
+            SignupFormUser.controls['lastName'].dirty
+          )">
+            <div *ngIf="SignupFormUser.controls['lastName'].errors.required" style="color: red;">
+              Last Name is required
+            </div>
+            <div *ngIf="SignupFormUser.controls['lastName'].errors.minlength" style="color: red;">
+              Last Name must have at least 5 chars
+            </div>
+          </div>
+          <div class="col-md-6 mt-3 form-group">
+            <input type="tel" formControlName="tel" class="form-control" id="tel" placeholder="Your Tel" required>
+          </div>
+          <div *ngIf="SignupFormUser.controls['tel'].invalid && (
+            SignupFormUser.controls['tel'].touched ||
+            SignupFormUser.controls['tel'].dirty
+          )">
+            <div *ngIf="SignupFormUser.controls['tel'].errors.required" style="color: red;">
+               Tel is required
+            </div>
+            <div *ngIf="SignupFormUser.controls['tel'].errors.pattern" style="color: red;">
+              Format  Tel Invalid 
+            </div>
+          </div>
+
+          <div class="col-md-6 mt-3 form-group">
+            <input type="email" formControlName="email" class="form-control" id="email" placeholder="Your Email" required>
+          </div>
+          <div *ngIf="SignupFormUser.controls['email'].invalid && (
+            SignupFormUser.controls['email'].touched ||
+            SignupFormUser.controls['email'].dirty
+          )">
+            <div *ngIf="SignupFormUser.controls['email'].errors.required" style="color: red;">
+               Email is required
+            </div>
+            <div *ngIf="SignupFormUser.controls['email'].errors.email" style="color: red;">
+              Format  Email Invalid 
+            </div>
+          </div>
+          <div class="col-md-6 mt-3 form-group">
+            <input type="text" formControlName="adresse" class="form-control" id="adresse" placeholder="Your Adresse" required>
+          </div>
+          <div *ngIf="SignupFormUser.controls['adresse'].invalid && (
+            SignupFormUser.controls['adresse'].touched ||
+            SignupFormUser.controls['adresse'].dirty
+          )">
+            <div *ngIf="SignupFormUser.controls['adresse'].errors.required" style="color: red;">
+               Adresse is required
+            </div>
+            <div *ngIf="SignupFormUser.controls['adresse'].errors.minlength" style="color: red;">
+              Adresse  must have at least 10 chars
+            </div>
+          </div>
+          <div class="col-md-6 mt-3 form-group">
+            <input type="date" formControlName="birthDay" class="form-control" id="birthDay" placeholder="Your birth Day" required>
+          </div>
+          <div *ngIf="SignupFormUser.controls['birthDay'].invalid && (
+            SignupFormUser.controls['birthDay'].touched ||
+            SignupFormUser.controls['birthDay'].dirty
+          )">
+            <div *ngIf="SignupFormUser.controls['birthDay'].errors.required" style="color: red;">
+               Birth Day is required
+            </div>
+            
+          </div>
+         
+        
+          <div class="col-md-6 mt-3 form-group">
+            <input type="password" formControlName="pwd" class="form-control" id="pwd" placeholder="Your Password" required>
+          </div>
+          <div *ngIf="SignupFormUser.controls['pwd'].invalid && (
+            SignupFormUser.controls['pwd'].touched ||
+            SignupFormUser.controls['pwd'].dirty
+          )">
+            <div *ngIf="SignupFormUser.controls['pwd'].errors.required" style="color: red;">
+              PWD is required
+            </div>
+            <div *ngIf="SignupFormUser.controls['pwd'].errors.pattern" style="color: red;">
+              Format  PWD Invalid 
+            </div>
+          </div>
+
+          <!-- avatar -->
+          <div class="col-md-6 mt-3 form-group" style="visibility: hidden;">
+            <input type="file"  class="form-control"  #filePicker (change)="onImageSelected($event)" >
+          </div>
+          <!-- <div *ngIf="SignupFormUser.controls['Avatar'].invalid && (
+            SignupFormUser.controls['Avatar'].touched ||
+            SignupFormUser.controls['Avatar'].dirty
+          )">
+            <div *ngIf="SignupFormUser.controls['Avatar'].errors.required" style="color: red;">
+              Avatar  is required
+            </div>
+            
+          </div>
+     -->
+          
+          <div>
+            <button type="button" class="btn btn-primary btn-lg" style="margin-bottom: 20px;" (click)="filePicker.click()">select you avatar </button>
+            <!-- <button style="margin-bottom: 20px;" (click)="filePicker.click()">select you avatar </button> -->
+          </div>
+
+          <div class="text-center">
+
+            <img [src]="imagePreview" width="200px">
+
+            <!-- <img [src]="cvPreview"> -->
+          </div>
+       
+        <div class="mt-3 "><button type="button" class="btn btn-primary btn-lg" [disabled]="SignupFormUser.invalid"  (click)="SignupUser()">SignIn User</button></div>
+        <!-- <div class="mt-3 "><button type="submit" [disabled]="SignupFormUser.invalid" (click)="SignupUser()">SignIn User</button></div> -->
+      </form>
+    </div>
+
+  </div>
+
+
+

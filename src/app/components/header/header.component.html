@@ -1,0 +1,133 @@
+
+<!-- <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a routerLink=""><span>Assistant </span>De Vie  </a></h1>
+     
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a routerLink="" class="active">Home</a></li>
+
+          <li *ngIf="userIsAuthenticated" class="dropdown"><a routerLink="#"><span>Dashbord</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li ><a *ngIf="userRole=='admin'&& userIsAuthenticated" routerLink="admin">ADMIN</a></li>
+              <li ><a *ngIf="userRole=='assistant' && userIsAuthenticated"  routerLink="assistantDashbord">ASSISTANT DASH</a></li>
+              <li  ><a *ngIf="userRole=='user' && userIsAuthenticated" routerLink="userDashbord">USER DASH</a></li>
+              
+            </ul>
+          </li>
+
+          <li ><a routerLink="profileUser">Profile</a></li>
+          <li class="dropdown"><a ><span>ALL VIEW</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+          
+              <li><a routerLink="ourAssistants">ALL ASSISTANTS</a></li>
+              <li><a routerLink="allUsers">ALL USERS</a></li>
+             
+            </ul>
+              </li>
+          
+          <li><a routerLink="signin" class="nav-link"
+            *ngIf="!userIsAuthenticated" >Login</a></li>
+             <li><a class="nav-link"
+            *ngIf="userIsAuthenticated" >{{user}}</a></li>
+
+            <li><a
+              *ngIf="userIsAuthenticated"
+              (click)="logout()">Logout</a></li>
+               <li><a
+              *ngIf="!userIsAuthenticated" 
+              class="dropdown"><a><span>SINGUP</span> <i class="bi bi-chevron-down"></i></a>
+            
+            <ul>
+              <li><a routerLink="signupAssistant">ASSITANT</a></li>
+              
+              <li><a routerLink="signupUser">USER</a></li>
+            </ul></a></li>
+
+
+
+          <li><a routerLink="">Contact</a></li>
+
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+
+    </div>
+  </header>
+   -->
+
+  <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top ">
+    <div class="container-fluid">
+      <a class="navbar-brand" >
+        <img style="width: 75px;" src="/assets/img/OIP.jpg">
+        <span style="color: dodgerblue;">  Assitante De Vie </span>
+      </a>
+      <button class="navbar-toggler" type="button"
+       data-bs-toggle="collapse" 
+       data-bs-target="#navbarSupportedContent" 
+       aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+         aria-label="Toggle navigation">
+
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+        <ul class="navbar-nav ma-auto mb-2 mb-lg-0 ml-4">
+          <li class="nav-link">
+            <a class="nav-link " aria-current="page" routerLink="">HOME</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a   class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              ALL VIEW
+            </a>
+            <ul class="dropdown-menu">
+              <li><a  class="dropdown-link" routerLink="ourAssistants">ALL ASSISTANTS</a></li>
+              <li><a  class="dropdown-link" routerLink="allUsers">ALL USERS</a></li>
+             
+              
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a  *ngIf="userIsAuthenticated" class="nav-item dropdown-toggle" routerLink="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dashbord
+            </a>
+            <ul class="dropdown-menu">
+              <li><a *ngIf="userRole=='admin'&& userIsAuthenticated" class="dropdown-item" routerLink="admin"> Dashbord ADMIN </a></li>
+              <li><a *ngIf="userRole=='assistant' && userIsAuthenticated" class="dropdown-item" routerLink="assistantDashbord"> Dashbord  ASSISTANT</a></li>
+              <li><a *ngIf="userRole=='user' && userIsAuthenticated" class="dropdown-item" routerLink="userDashbord"> Dashbord  USER</a></li>
+              
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-item" routerLink="profileUser">Profile</a>
+          </li>
+
+          <li><a routerLink="signin" class="nav-item"
+            *ngIf="!userIsAuthenticated" >Login</a></li>
+             <li><a class="nav-item"
+            *ngIf="userIsAuthenticated" >{{user}}</a></li>
+
+            <li><a
+              *ngIf="userIsAuthenticated"
+              (click)="logout()">Logout</a></li>
+               <li><a
+              *ngIf="!userIsAuthenticated" 
+              class="dropdown"><a><span>SINGUP</span> <i class="bi bi-chevron-down"></i></a>
+            
+            <ul>
+              <li><a routerLink="signupAssistant">ASSITANT</a></li>
+              
+              <li><a routerLink="signupUser">USER</a></li>
+            </ul></a></li>
+
+        </ul>
+       
+        <form class="d-flex p-2 pe-6 " >
+          <input class="form-control me-2 " type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      
+      </div>
+    </div>
+  </nav>

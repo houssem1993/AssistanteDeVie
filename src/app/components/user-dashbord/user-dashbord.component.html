@@ -1,0 +1,39 @@
+<app-hero title="DASHBORD USER"></app-hero>
+
+<!-- <form>
+    <div class="text-center">
+    <label for="">Filter By First Name </label>
+    <input type="text" [(ngModel)]='term' [ngModelOptions]="{standalone: 
+   true}">
+    </div>
+   </form> -->
+   
+<table class=" table">
+   
+    <thead>
+        <tr>
+            <th scope="col">Id Demande</th>
+            <th scope="col">First Name Assistant</th>
+            <th scope="col">Last name Assistant </th>
+            <th scope="col">Tel Assistant </th>
+            <th scope="col">Email Assistant </th>
+            <th scope="col">Response </th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        <!-- <ng-container *ngFor="let x of v; let i=index"> -->
+        <tr *ngFor="let elt of demandetabfinal "  >
+          
+            <td scope="row">{{elt._id}}</td>
+            <td >{{elt.FirstName}}</td>
+            <!-- <td *ngIf="elt.idAssistant">{{getAssitantById(elt.idAssistant).lastName}}</td>
+            <td *ngIf="elt.idAssistant">{{getAssitantById(elt.idAssistant).tel}}</td>
+            <td *ngIf="elt.idAssistant">{{getAssitantById(elt.idAssistant).email}}</td> -->
+            <td>{{elt.status}}</td>
+       
+        </tr>
+    <!-- </ng-container> -->
+
+    </tbody>
+</table>

@@ -1,0 +1,21 @@
+
+<app-hero title="Assistant Info"></app-hero>
+
+<div class="container col-lg-6 col-md-6 d-flex align-items-stretch" style="margin-top: 40px;margin-left: 40px;">
+<app-one-assistant [x]="assistant" style="margin-bottom: 20px;"></app-one-assistant>
+
+<div class="col-lg-6">
+    
+    <div class="d-block custom-media align-items-stretch">
+       <iframe [src]="cvAssistant" width="100%" height="375" style="margin-left:150px;width: 700px;"  frameborder="0"></iframe> 
+    
+    </div>
+    </div>
+
+</div>
+
+
+
+<div class="container mt-3 ">
+    <button type="submit" style="text-align: center;" (click)="contactAssistant()">Contact Me</button>
+</div>

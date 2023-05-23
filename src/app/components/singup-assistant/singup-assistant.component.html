@@ -1,0 +1,154 @@
+<app-hero title="Signup Assistant"></app-hero>
+<div class="row mt-5 justify-content-center" data-aos="fade-up">
+    <div class="col-lg-10">
+      <form [formGroup]="singupForm">
+        
+        <div class="col-md-6 form-group">
+            <input type="text" formControlName="FirstName" class="form-control"  placeholder="Your First Name" >
+          </div>
+          <div *ngIf="singupForm.controls['FirstName'].invalid && (
+            singupForm.controls['FirstName'].touched ||
+            singupForm.controls['FirstName'].dirty
+          )">
+            <div *ngIf="singupForm.controls['FirstName'].errors.required" style="color: red;">
+              First Name is required
+            </div>
+            <div *ngIf="singupForm.controls['FirstName'].errors.minlength" style="color: red;">
+              first Name must have at least 5 chars
+            </div>
+          </div>
+          <div class="col-md-6 mt-3 form-group">
+            <input type="text" formControlName="lastName" class="form-control"  placeholder="Your Last Name" >
+          </div>
+          <div *ngIf="singupForm.controls['lastName'].invalid && (
+            singupForm.controls['lastName'].touched ||
+            singupForm.controls['lastName'].dirty
+          )">
+            <div *ngIf="singupForm.controls['lastName'].errors.required" style="color: red;">
+              Last Name is required
+            </div>
+            <div *ngIf="singupForm.controls['lastName'].errors.minlength" style="color: red;">
+              Last Name must have at least 5 chars
+            </div>
+          </div>
+          <div class="col-md-6 mt-3 form-group">
+            <input type="tel" formControlName="tel"  class="form-control"  placeholder="Your Tel" required>
+          </div>
+          <div *ngIf="singupForm.controls['tel'].invalid && (
+            singupForm.controls['tel'].touched ||
+            singupForm.controls['tel'].dirty
+          )">
+            <div *ngIf="singupForm.controls['tel'].errors.required" style="color: red;">
+               Tel is required
+            </div>
+            <div *ngIf="singupForm.controls['tel'].errors.pattern" style="color: red;">
+              Format  Tel Invalid 
+            </div>
+          </div>
+
+          <div class="col-md-6 mt-3 form-group">
+            <input type="email" formControlName="email"  class="form-control"  placeholder="Your Email" required>
+          </div>
+          <div *ngIf="singupForm.controls['email'].invalid && (
+            singupForm.controls['email'].touched ||
+            singupForm.controls['email'].dirty
+          )">
+            <div *ngIf="singupForm.controls['email'].errors.required" style="color: red;">
+               Email is required
+            </div>
+            <div *ngIf="singupForm.controls['email'].errors.email" style="color: red;">
+              Format  Email Invalid 
+            </div>
+            <span>{{msgError}}</span>
+          </div>
+          <div class="col-md-6 mt-3 form-group">
+            <input type="text" formControlName="adresse"  class="form-control"  placeholder="Your Adresse" required>
+          </div>
+          <div *ngIf="singupForm.controls['adresse'].invalid && (
+            singupForm.controls['adresse'].touched ||
+            singupForm.controls['adresse'].dirty
+          )">
+            <div *ngIf="singupForm.controls['adresse'].errors.required" style="color: red;">
+               Adresse is required
+            </div>
+            <div *ngIf="singupForm.controls['adresse'].errors.minlength" style="color: red;">
+              Adresse  must have at least 10 chars
+            </div>
+          </div>
+          <div class="col-md-6 mt-3 form-group">
+            <input type="date" formControlName="birthDay"  class="form-control"  placeholder="Your birth Day" required>
+          </div>
+          <div *ngIf="singupForm.controls['birthDay'].invalid && (
+            singupForm.controls['birthDay'].touched ||
+            singupForm.controls['birthDay'].dirty
+          )">
+            <div *ngIf="singupForm.controls['birthDay'].errors.required" style="color: red;">
+               Birth Day is required
+            </div>
+            
+          </div>
+
+          <div class="col-md-6 mt-3 form-group">
+            <input type="password" formControlName="pwd"  class="form-control"  placeholder="Your Password" >
+          </div>
+          <div *ngIf="singupForm.controls['pwd'].invalid && (
+            singupForm.controls['pwd'].touched ||
+            singupForm.controls['pwd'].dirty
+          )">
+            <div *ngIf="singupForm.controls['pwd'].errors.required" style="color: red;">
+              PWD is required
+            </div>
+            <div *ngIf="singupForm.controls['pwd'].errors.pattern" style="color: red;">
+              Format  PWD Invalid 
+            </div>
+          </div>
+          
+          <!-- file -->
+          <div class="col-md-6 mt-3 form-group" style="visibility: hidden;" id="">
+            <input type="file"   class="form-control"  #filePicker (change)="onImageSelected($event)">
+          </div>
+          <!-- <div *ngIf="singupForm.controls['cv'].invalid && (
+            singupForm.controls['cv'].touched ||
+            singupForm.controls['cv'].dirty
+          )">
+            <div *ngIf="singupForm.controls['cv'].errors.required" style="color: red;">
+               File  is required
+            </div>
+            
+          </div> -->
+          <div>
+            <button type="button" class="btn btn-primary btn-lg" style="margin-bottom: 20px;" (click)="filePicker.click()">select your cv </button>
+            <!-- <button style="margin-bottom: 20px;" (click)="filePicker.click()">select your cv</button> -->
+          </div>
+          <div class="text-center">
+
+            <img src={{cvPreview}} width="200px">
+
+            <!-- <img [src]="cvPreview"> -->
+          </div>
+         
+
+
+          <!-- <div class="col-md-6 mt-3 form-group">
+            <fieldset>
+                <p >Gender:</p> 
+            
+            <input type="checkbox" formControlName="Homme"  >
+            <label for="Homme">male</label><br>
+        
+                <input type="checkbox" formControlName="femme"   >
+                <label for="femme">female</label>
+            
+        </fieldset>
+          </div> -->
+        
+          
+       
+          <div class="mt-3 "><button type="button" class="btn btn-primary btn-lg" [disabled]="singupForm.invalid"  (click)="SignupAssistant()">SignIn Assistant</button></div>
+        <!-- <div class="mt-3 "><button type="submit" [disabled]="singupForm.invalid"  (click)="SignupAssistant()">SignIn Assistant</button></div> -->
+      </form>
+    </div>
+
+  </div>
+
+

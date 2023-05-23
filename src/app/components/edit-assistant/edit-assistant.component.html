@@ -1,0 +1,58 @@
+<app-hero title="EDIT ASSISTANT"></app-hero>
+<div class="row mt-5 justify-content-center" data-aos="fade-up">
+    <div class="col-lg-10">
+      <form #singupForm="ngForm" (ngSubmit)="EditAssistant()">
+        
+        <div class="col-md-6 form-group">
+            <input type="text" [(ngModel)]="assistant.FirstName" name="FirstName" readonly class="form-control"  placeholder="Your First Name" >
+          </div>
+          
+          <div class="col-md-6 mt-3 form-group">
+            <input type="text" [(ngModel)]="assistant.lastName" name="lastName" readonly class="form-control"  placeholder="Your Last Name" >
+          </div>
+         
+          <div class="col-md-6 mt-3 form-group">
+            <input type="tel" [(ngModel)]="assistant.tel" name="tel"  class="form-control"  placeholder="Your Tel" >
+          </div>
+
+          <div class="col-md-6 mt-3 form-group">
+            <input type="email" [(ngModel)]="assistant.email" name="email"  class="form-control"  placeholder="Your Email" >
+          </div>
+          
+          <div class="col-md-6 mt-3 form-group">
+            <input type="text" [(ngModel)]="assistant.adresse" name="adresse" class="form-control"  placeholder="Your Adresse" >
+          </div>
+          
+          <div class="col-md-6 mt-3 form-group">
+            <input type="date" [(ngModel)]="assistant.birthDay" name="birthDay"  class="form-control"  placeholder="Your birth Day" >
+          </div>
+          
+          <div class="col-md-6 mt-3 form-group">
+            <input type="file" [(ngModel)]="assistant.cv" name="cv"  class="form-control"  placeholder="Your CV " >
+          </div>
+         
+          <!-- <div class="col-md-6 mt-3 form-group">
+            <fieldset>
+                <p >Gender:</p> 
+            
+            <input type="checkbox" formControlName="Homme"  >
+            <label for="Homme">male</label><br>
+        
+                <input type="checkbox" formControlName="femme"   >
+                <label for="femme">female</label>
+            
+        </fieldset>
+          </div>
+         -->
+          <div class="col-md-6 mt-3 form-group">
+            <input type="password" [(ngModel)]="assistant.pwd" name="pwd"  class="form-control"  placeholder="Your Password" >
+          </div>
+       
+        <div class="mt-3 "><button type="submit"  >Edit  Assistant</button></div>
+      </form>
+    </div>
+
+  </div>
+
+
+

@@ -1,0 +1,30 @@
+<app-hero title="CONTACT ME"></app-hero>
+
+<div class="row mt-5 justify-content-center" data-aos="fade-up">
+    <div class="col-lg-10">
+      <form #contactForm="ngForm" (ngSubmit)="sendDemande()">
+        
+        <div class="col-md-6 form-group">
+            <input type="text" [(ngModel)]="user.FirstName" name="FirstName" readonly class="form-control"  placeholder="Your First Name" >
+          </div>
+          
+          <div class="col-md-6 mt-3 form-group">
+            <input type="text" [(ngModel)]="user.lastName" name="lastName" readonly class="form-control"  placeholder="Your Last Name" >
+          </div>
+         
+          <div class="col-md-6 mt-3 form-group">
+            <input type="tel" [(ngModel)]="user.tel" name="tel" readonly  class="form-control"  placeholder="Your Tel" >
+          </div>
+
+          <div class="col-md-6 mt-3 form-group">
+            <input type="text" [(ngModel)]="user.subject" name="subject"  class="form-control"  placeholder="Your Subject" >
+          </div>
+
+         
+       
+        <div class="mt-3 "><button type="submit"  >SEND DEMANDE</button></div>
+      </form>
+    </div>
+
+  </div>
+

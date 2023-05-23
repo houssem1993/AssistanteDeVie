@@ -1,0 +1,18 @@
+<app-hero title="ALL USERS"></app-hero>
+<section id="team" class="team section-bg">
+    <div class="container">
+
+      <div class="section-title" data-aos="fade-up">
+        <h2>Our <strong>USERS</strong></h2>
+        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+      </div>
+
+      <div class="row">
+
+        <div class="col-lg-3 col-md-6 d-flex align-items-stretch" *ngFor="let elt of userTab">
+          <app-user [user]="elt"></app-user>
+        </div>
+      </div>
+
+    </div>
+  </section>

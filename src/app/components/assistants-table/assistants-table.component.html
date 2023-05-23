@@ -1,0 +1,40 @@
+<form>
+    <div class="text-center">
+    <label for="">Filter By First Name </label>
+    <input type="text" [(ngModel)]='term' [ngModelOptions]="{standalone: 
+   true}">
+    </div>
+   </form>
+   
+<table class=" table">
+   
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last name</th>
+            <th scope="col">Tel </th>
+            <th scope="col">Email </th>
+            <th scope="col">Adresse </th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let assistant of assistantTab | myFilter :term">
+            <td scope="row">{{assistant._id}}</td>
+            <td>{{assistant.FirstName}}</td>
+            <td>{{assistant.lastName}}</td>
+            <td>{{assistant.tel}}</td>
+            <td>{{assistant.email}}</td>
+            <td>{{assistant.adresse}}</td>
+            <td>
+                <button type="button" class="btn btn-success" style=" margin-right: 1em" (click)="confirmedAssistant(assistant._id)">CONFIRMED</button>
+                <button type="button" class="btn btn-danger"  style=" margin-right: 1em" (click)="refusedAssistant(assistant._id)">REFUSED</button>
+                <button type="button" class="btn btn-primary" style=" margin-right: 1em" (click)="displayAssistant(assistant._id)">DISPLAY</button>
+                <button type="button" class="btn btn-warning" style=" margin-right: 1em" (click)="deleteAssistant(assistant._id)">DELETE</button>
+                <button type="button" class="btn btn-warning" style=" margin-right: 1em" (click)="editAssistant(assistant._id)">EDIT</button>
+            </td>
+        </tr>
+
+    </tbody>
+</table>

@@ -1,0 +1,29 @@
+<table class=" table">
+    <thead>
+        <tr>
+            <th scope="col">Id Demande</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last name</th>
+            <th scope="col">Id Assistant</th>
+            <th scope="col">SUBJECT </th>
+            
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let demande of demandeTab">
+            <td scope="row">{{demande._id}}</td>
+            <td>{{demande.FirstName}}</td>
+            <td>{{demande.lastName}}</td>
+            <td>{{demande.idAssistant}}</td>
+            <td>{{demande.subject}}</td>
+          
+            <td>
+                <button type="button" class="btn btn-success" style=" margin-right: 1em" (click)="confirmedDemande(demande._id)">ACCEPT </button>
+                <button type="button" class="btn btn-danger"  style=" margin-right: 1em" (click)="refusedDemande(demande._id)">DECLINE</button>
+                
+            </td>
+        </tr>
+
+    </tbody>
+</table>

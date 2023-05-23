@@ -1,0 +1,25 @@
+<app-hero title="ALL Assistants"></app-hero>
+<section id="team" class="team section-bg">
+    <div class="container">
+  
+      <div class="section-title" data-aos="fade-up">
+        <h2>Our <strong>ASSISTANTS</strong></h2>
+        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+      </div>
+  
+      <div class="row">
+
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch" *ngFor="let elt of assistantTab">
+          <div>
+            <app-one-assistant [x]="elt"></app-one-assistant>
+          <div style="text-align: center;">
+          <button  class="mb-5" type="submit" (click)="moreInfo(elt._id)"  >More Info</button>
+        </div>
+    </div>
+    </div>
+  
+      </div>
+  
+    
+    </div>
+  </section>

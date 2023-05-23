@@ -1,0 +1,43 @@
+<app-hero title="Login"></app-hero>
+<div class="row mt-5 justify-content-center" data-aos="fade-up">
+    <div class="col-lg-10">
+      <form [formGroup]="loginForm" >
+        
+        <div class="col-md-6 form-group">
+          <input type="email"  formControlName="email" class="form-control"  placeholder="Your Email" required>
+        </div>
+        <div *ngIf="loginForm.controls['email'].invalid && (
+          loginForm.controls['email'].touched ||
+          loginForm.controls['email'].dirty
+        )">
+          <div *ngIf="loginForm.controls['email'].errors.required" style="color: red;">
+             Email is required
+          </div>
+          <div *ngIf="loginForm.controls['email'].errors.email" style="color: red;">
+            Format  Email Invalid 
+          </div>
+        </div>
+        <div class="col-md-6 mt-3 form-group">
+          <input type="password" formControlName="pwd" class="form-control"  placeholder="Your Password" required>
+        </div>
+        <div *ngIf="loginForm.controls['pwd'].invalid && (
+          loginForm.controls['pwd'].touched ||
+          loginForm.controls['pwd'].dirty
+        )">
+          <div *ngIf="loginForm.controls['pwd'].errors.required" style="color: red;">
+            PWD is required
+          </div>
+          <div *ngIf="loginForm.controls['pwd'].errors.pattern" style="color: red;">
+            Format  PWD Invalid 
+          </div>
+        </div>
+        
+        
+     
+        <div class="mt-3"> <button type="button" class="btn btn-primary btn-lg" [disabled]="loginForm.invalid" (click)="Login()">LOGIN </button></div>
+      <!-- <div class="mt-3"><button type="submit" [disabled]="loginForm.invalid" (click)="Login()">LOGIN</button></div> -->
+    </form>
+    <span style="color: red;">{{errorMsg}}</span>
+    </div>
+
+  </div>
